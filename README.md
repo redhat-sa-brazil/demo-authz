@@ -2,9 +2,7 @@
 
 ## Setup
 
-### Download Red Hat Single Sign-On 7.2
-
-#### Software Downloads:
+### Software Downloads:
 * Red Hat Single Sign-On 7.2
 * Red Hat Single Sign-On 7.2.5 Server Patch
 * Red Hat Single Sign-On 7.2.5 Client Adapter for JBoss EAP 7
