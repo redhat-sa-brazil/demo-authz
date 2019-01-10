@@ -1,0 +1,11 @@
+org/keycloak/example/photoz/util/Resources.class
+org/keycloak/example/photoz/util/TransactionInterceptor.class
+org/keycloak/example/photoz/ErrorResponse.class
+org/keycloak/example/photoz/album/ProfileService.class
+org/keycloak/example/photoz/PhotozApplication.class
+org/keycloak/example/photoz/entity/Photo.class
+org/keycloak/example/photoz/admin/AdminAlbumService.class
+org/keycloak/example/photoz/util/Transaction.class
+org/keycloak/example/photoz/album/ProfileService$Profile.class
+org/keycloak/example/photoz/album/AlbumService.class
+org/keycloak/example/photoz/entity/Album.class
