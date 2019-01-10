@@ -1,5 +1,9 @@
 # Demo of Authorization Services on Red Hat Single Sign-On
 
+## Presentation
+
+https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1Czhw
+
 ## Setup
 
 ### Software Downloads:
@@ -51,6 +55,28 @@ cd jboss-eap-7.1
 ```
 
 ## Preparing applications and dependencies
+
+```bash
+git clone https://github.com/keycloak/keycloak
+git checkout tags/3.4.3.Final
+mvn clean package -f keycloak/testsuite/integration-arquillian/test-apps/photoz/pom.xml
+cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-authz-policy/target/photoz-authz-policy-3.4.3.Final.jar rh-sso-7.2/standalone/deployments
+cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-html5-client/target/photoz-html5-client.war jboss-eap-7.1/standalone/deployments
+cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api/target/photoz-restful-api.war jboss-eap-7.1/standalone/deployments
+```
+
+## Starting Red Hat Single Sign-On
+
+```bash
+./rh-sso-7.2/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.profile=preview
+```
+
+## Starting Red Hat JBoss EAP
+
+```bash
+./jboss-eap-7.1/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0
+```
+
 
 
 
