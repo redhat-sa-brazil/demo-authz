@@ -85,7 +85,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/add-realm.png?raw=true)
 
-**4** - Open the tab Authorization of client `photoz-restful-api` and import the file `photoz-restful-api-authz-service.json`
+**3** - Open the tab Authorization of client `photoz-restful-api` and import the file `photoz-restful-api-authz-service.json`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/import-authz.png?raw=true)
 
@@ -103,14 +103,17 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **1** - Show the **photoz-restful-api** client configuration and click on **Authorization** tab and show the Settings in **Resources**, **Authorization Scopes**, **Policies** and **Permissions**. Explain each one if possible.
 
-**2** - Access the 'photoz-html5-client' application in 'http://localhost:8080/photoz-html5-client'
+**2** - Access the `photoz-html5-client` application in http://localhost:8080/photoz-html5-client
 
-**3** - Login with user Alice
+**3** - Login with user **Alice**
 
 **4** - Consent the use of your data from photoz-restful-api by photoz-html-client
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/consent-screen.png?raw=true)
 
+**5** - Click on `Show Requesting Party Token` to see the authorization permissions on Token from Album URL that you just requested on main page
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/party-token.png?raw=true)
 
 
 
