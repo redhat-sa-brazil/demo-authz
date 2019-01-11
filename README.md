@@ -12,7 +12,7 @@ https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1C
 * Red Hat Single Sign-On 7.2.5 Client Adapter for JBoss EAP 7
 * Red Hat JBoss Enterprise Application Platform 7.1.0
 
-### Red Hat Single Sign-On installation and configuration
+### Red Hat Single Sign-On and JBoss EAP installation and configuration
 
 ```bash
 unzip rh-sso-7.2.0.zip
@@ -76,6 +76,12 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 ```bash
 ./jboss-eap-7.1/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0
 ```
+
+# Demo Presentation
+
+1 - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth.
+
+2 - Import the realm 'realm-photoz.json'
 
 
 
