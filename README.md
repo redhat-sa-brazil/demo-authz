@@ -115,7 +115,11 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/party-token.png?raw=true)
 
+**6** - Create an album `alices album`
 
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/create-album.png?raw=true)
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/alices-album.png?raw=true)
 
 
 
