@@ -101,14 +101,9 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 * photoz-html5-client
 * photoz-restful-api
 
-### The users and credentials are:
-* alice - 'redhat@123'
-* jdoe - 'redhat@123'
-* admin - 'redhat@123'
+**1** - Show the 'photoz-restful-api' client configuration and click on 'Authorization' tab and show the Settings in Resources, Authorization Scopes, Policies and Permissions. Explain each resource and policy if possible.
 
-1 - Show the 'photoz-restful-api' client configuration and click on 'Authorization' tab and show the Settings in Resources, Authorization Scopes, Policies and Permissions. Explain each resource and policy if possible.
-
-2 - Access the 'photoz-html5-client' application in 'http://localhost:8080/photoz-html5-client'
+**2** - Access the 'photoz-html5-client' application in 'http://localhost:8080/photoz-html5-client'
 
 
 
