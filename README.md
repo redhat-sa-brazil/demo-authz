@@ -79,10 +79,11 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 # Demo Presentation
 
-1 - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth.
+1 - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
 
 2 - Import the realm 'realm-photoz.json'
 
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/Import-json.png?raw=true)
 
 
 
