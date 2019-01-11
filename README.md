@@ -77,20 +77,45 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 ./jboss-eap-7.1/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0
 ```
 
-# Demo Presentation
-
-## Clients
-
-* photoz-html5-client
-* photoz-restful-api
+## Demo Preparation
 
 1 - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
 
-2 - Import the realm 'realm-photoz.json'
+2 - Click on Add-Realm and add a realm 'photoz' importing the file 'realm-photoz.json'
 
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/Import-json.png?raw=true)
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/add-realm.png?raw=true =526x337)
 
-3 - Show the 'photoz-restful-api' client configuration
+3 - Update the users passwords for alice, jdoe and admin in 'Users - Credentials'
+
+4 - Open the tab Authorization of client 'photoz-restful-api' and import the file 'photoz-restful-api-authz-service.json'
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/import-authz.png?raw=true =526x337)
+
+3 - Show the 'photoz-restful-api' client configuration and click on 'Authorization' tab and show the Settings in Resources, Authorization Scopes, Policies and Permissions. Explain each resource and policy if possible.
+
+4 - Access the 'photoz-html5-client' application in 'http://localhost:8080/photoz-html5-client'
+
+
+
+
+## Demo Presentation
+
+### Clients
+* photoz-html5-client
+* photoz-restful-api
+
+### The users and credentials are:
+* alice - 'redhat@123'
+* jdoe - 'redhat@123'
+* admin - 'redhat@123'
+
+1 - Show the 'photoz-restful-api' client configuration and click on 'Authorization' tab and show the Settings in Resources, Authorization Scopes, Policies and Permissions. Explain each resource and policy if possible.
+
+2 - Access the 'photoz-html5-client' application in 'http://localhost:8080/photoz-html5-client'
+
+
+
+
 
 
 
