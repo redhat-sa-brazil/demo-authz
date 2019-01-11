@@ -18,13 +18,13 @@ https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1C
 unzip rh-sso-7.2.0.zip
 ```
 
-Adding admin user:
+**1** - Adding admin user:
 
 ```bash
 ./rh-sso-7.2/bin/add-user.sh
 ```
 
-Appling Patch 7.2.5
+**2** - Appling Patch 7.2.5
 
 ```bash
 ./rh-sso-7.2/bin/standalone.sh &
@@ -33,19 +33,19 @@ Appling Patch 7.2.5
   patch apply rh-sso-7.2.5-patch.zip
 ```
 
-Installing JBoss EAP 7.1
+**3** - Installing JBoss EAP 7.1
 
 ```bash
 unzip jboss-eap-7.1.0.zip
 ```
 
-Adding admin user:
+**4** - Adding admin user:
 
 ```bash
 ./jboss-eap-7.1/bin/add-user.sh
 ```
 
-Installing RH-SSO Adapter for JBoss EAP 7.1
+**5** - Installing RH-SSO Adapter for JBoss EAP 7.1
 
 ```bash
 cd jboss-eap-7.1
@@ -79,20 +79,17 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ## Demo Preparation
 
-1 - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
+**1** - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
 
-2 - Click on Add-Realm and add a realm `photoz` importing the file `realm-photoz.json`
+**2** - Click on Add-Realm and add a realm `photoz` importing the file `realm-photoz.json`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/add-realm.png?raw=true)
 
-3 - Update the users passwords for alice, jdoe and admin in `Users - Credentials`
+**3** - Update the users passwords for **alice**, **jdoe** and **admin** in **Users** - **Credentials**
 
-4 - Open the tab Authorization of client `photoz-restful-api` and import the file `photoz-restful-api-authz-service.json`
+**4** - Open the tab Authorization of client `photoz-restful-api` and import the file `photoz-restful-api-authz-service.json`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/import-authz.png?raw=true)
-
-
-
 
 
 ## Demo Presentation
