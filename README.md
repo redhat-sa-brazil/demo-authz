@@ -160,7 +160,8 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
-**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` will deny the access of album for 2 minutes. As the example below, in minutes 42 and 43 the access wil be denied.
+**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of album for 2 minutes. 
+         As the example below in minutes 42 and 43 the access wil be denied.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
 
@@ -168,7 +169,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-permission.png?raw=true)
 
-**20** - Check with admin login that you cannot access album resource in specific time you have defined.
+**20** - Check with admin user that you cannot access album resource in the specific minutes you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
