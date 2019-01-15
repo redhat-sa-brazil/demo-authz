@@ -71,12 +71,6 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 ./rh-sso-7.2/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.profile=preview
 ```
 
-### Starting Red Hat JBoss EAP
-
-```bash
-./jboss-eap-7.1/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0
-```
-
 ## Demo Preparation
 
 **1** - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
@@ -89,6 +83,11 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/import-authz.png?raw=true)
 
+**4** - Starting Red Hat JBoss EAP with deployed applications
+
+```bash
+./jboss-eap-7.1/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0
+```
 
 ## Demo Presentation
 
@@ -115,11 +114,63 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/party-token.png?raw=true)
 
-**6** - Create an album `alices album`
+**6** - Now click on `My Profile`. Then click back on `Show Requesting Party Token` to check the `profile:view` permission 
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/profile-view.png?raw=true)
+
+**7** - Click back on browser then create an album `alices album`. This will be the album #1
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/create-album.png?raw=true)
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/alices-album.png?raw=true)
+
+**8** - Click on `Sign Out` and log-in with user `jdoe`
+
+**9** - Click on Yes to authorize `photoz-html-client` on consent screen
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/grant-jdoe.png?raw=true)
+
+**10** - Create an album `jdoes album`. This will be the album #2
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album.png?raw=true)
+
+**11** - Now click on `Sign Out` again and log-in with user `alice` to see the albuns
+
+**12** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/remove-album-permission.png?raw=true)
+
+**13** - Refresh the page in `photoz-html5-client` to check you don't have access anymore
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied1.png?raw=true)
+
+**14** - Update the URL in browser to guarantee you don't have access
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied2.png?raw=true)
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied3.png?raw=true)
+
+**15** - Now on RH-SSO edit the Permission `Album Resource Permission`. Add the Policy `Only From @keycloak.org or Admin` and change the Decision Strategy to `Unanimous`
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin-album.png?raw=true)
+
+**16** - Refresh the page in `photoz-html5-client` to confirm Alice still doesn't have access.
+
+**16** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
+
+**17** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` will deny the access of album for 2 minutes. As the example below, in minutes 42 and 43 the access wil be denied.
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
+
+**18** - Then create a permission based on time policy you just created
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-permission.png?raw=true)
+
+**18** - Check with admin login that you cannot access album resource in specific time you have defined.
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
 
 
