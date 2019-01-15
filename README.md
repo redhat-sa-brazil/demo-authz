@@ -65,13 +65,13 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-html5-clien
 cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api/target/photoz-restful-api.war jboss-eap-7.1/standalone/deployments
 ```
 
+## Demo Preparation
+
 ### Starting Red Hat Single Sign-On
 
 ```bash
 ./rh-sso-7.2/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.profile=preview
 ```
-
-## Demo Preparation
 
 **1** - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
 
@@ -91,7 +91,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ## Demo Presentation
 
-### Clients
+### Applications
 * photoz-html5-client
 * photoz-restful-api
 
@@ -100,76 +100,78 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 * jdoe/jdoe
 * admin/admin
 
-**1** - Show the **photoz-restful-api** client configuration and click on **Authorization** tab and show the Settings in **Resources**, **Authorization Scopes**, **Policies** and **Permissions**. Explain each one if possible.
+**1** - Access Red Hat Single Sign-On in http://localhost:8081/auth/admin
 
-**2** - Access the `photoz-html5-client` application in http://localhost:8080/photoz-html5-client
+**2** - Click on `Clients` in `photoz` realm. Open  **photoz-restful-api** client configuration click on **Authorization** tab and show the Settings in **Resources**, **Authorization Scopes**, **Policies** and **Permissions**. Explain each one if possible.
 
-**3** - Login with user **Alice**
+**3** - Access the `photoz-html5-client` application in http://localhost:8080/photoz-html5-client
 
-**4** - Consent the use of your data from photoz-restful-api by photoz-html-client
+**4** - Login with user **Alice**
+
+**5** - Consent the use of your data from photoz-restful-api by photoz-html-client
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/consent-screen.png?raw=true)
 
-**5** - Click on `Show Requesting Party Token` to see the authorization permissions on Token from Album URL that you just requested on main page
+**6** - Click on `Show Requesting Party Token` to see the authorization permissions on Token from Album URL that you just requested on main page
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/party-token.png?raw=true)
 
-**6** - Now click on `My Profile`. Then click back on `Show Requesting Party Token` to check the `profile:view` permission 
+**7** - Now click on `My Profile`. Then click back on `Show Requesting Party Token` to check the `profile:view` permission 
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/profile-view.png?raw=true)
 
-**7** - Click back on browser then create an album `alices album`. This will be the album #1
+**8** - Click back on browser then create an album `alices album`. This will be the album #1
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/create-album.png?raw=true)
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/alices-album.png?raw=true)
 
-**8** - Click on `Sign Out` and log-in with user `jdoe`
+**9** - Click on `Sign Out` and log-in with user `jdoe`
 
-**9** - Click on Yes to authorize `photoz-html-client` on consent screen
+**10** - Click on Yes to authorize `photoz-html-client` on consent screen
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/grant-jdoe.png?raw=true)
 
-**10** - Create an album `jdoes album`. This will be the album #2
+**11** - Create an album `jdoes album`. This will be the album #2
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album.png?raw=true)
 
-**11** - Now click on `Sign Out` again and log-in with user `alice` to see the albuns
+**12** - Now click on `Sign Out` again and log-in with user `alice` to see the albuns
 
-**12** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
+**13** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/remove-album-permission.png?raw=true)
 
-**13** - Refresh the page in `photoz-html5-client` to check you don't have access anymore
+**14** - Refresh the page in `photoz-html5-client` to check you don't have access anymore
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied1.png?raw=true)
 
-**14** - Update the URL in browser to guarantee you don't have access
+**15** - Update the URL in browser to guarantee you don't have access
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied2.png?raw=true)
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied3.png?raw=true)
 
-**15** - Now on RH-SSO edit the Permission `Album Resource Permission`. Add the Policy `Only From @keycloak.org or Admin` and change the Decision Strategy to `Unanimous`
+**16** - Now on RH-SSO edit the Permission `Album Resource Permission`. Add the Policy `Only From @keycloak.org or Admin` and change the Decision Strategy to `Unanimous`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin-album.png?raw=true)
 
-**16** - Refresh the page in `photoz-html5-client` to confirm Alice still doesn't have access.
+**17** - Refresh the page in `photoz-html5-client` to confirm Alice still doesn't have access.
 
-**17** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
+**18** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
-**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of album for 2 minutes. 
+**19** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of album for 2 minutes. 
          As the example below in minutes 42 and 43 the access wil be denied.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
 
-**19** - Then create a permission based on time policy you just created
+**20** - Then create a permission based on time policy you just created
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-permission.png?raw=true)
 
-**20** - Check with admin user that you cannot access album resource in the specific minutes you have defined.
+**21** - Check with admin user that you cannot access album resource in the specific minutes you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
