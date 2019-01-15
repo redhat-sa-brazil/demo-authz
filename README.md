@@ -7,15 +7,16 @@ https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1C
 ## Setup
 
 ### Software Downloads:
-* Red Hat Single Sign-On 7.2
-* Red Hat Single Sign-On 7.2.5 Server Patch
-* Red Hat Single Sign-On 7.2.5 Client Adapter for JBoss EAP 7
-* Red Hat JBoss Enterprise Application Platform 7.1.0
+* Red Hat Single Sign-On 7.2 (rh-sso-7.2.0.zip)
+* Red Hat Single Sign-On 7.2.5 Server Patch (rh-sso-7.2.5-patch.zip)
+* Red Hat Single Sign-On 7.2.5 Client Adapter for JBoss EAP 7 (rh-sso-7.2.5-eap7-adapter.zip)
+* Red Hat JBoss Enterprise Application Platform 7.1.0 (jboss-eap-7.1.0.zip)
 
 ### Red Hat Single Sign-On and JBoss EAP installation and configuration
 
 ```bash
 unzip rh-sso-7.2.0.zip
+
 ```
 
 **1** - Adding admin user:
@@ -37,6 +38,7 @@ unzip rh-sso-7.2.0.zip
 
 ```bash
 unzip jboss-eap-7.1.0.zip
+
 ```
 
 **4** - Adding admin user:
@@ -49,9 +51,10 @@ unzip jboss-eap-7.1.0.zip
 
 ```bash
 cd jboss-eap-7.1
-./jboss-eap-7.1/bin/standalone.sh &
+unzip rh-sso-7.2.5-eap7-adapter.zip
+./bin/standalone.sh &
 
-./jboss-eap-7.1/bin/jboss-cli.sh --connect --file=./jboss-eap-7.1/bin/adapter-install.cli
+./bin/jboss-cli.sh --connect --file=./jboss-eap-7.1/bin/adapter-install.cli
 ```
 
 ## Preparing applications and dependencies
@@ -116,7 +119,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/party-token.png?raw=true)
 
-**7** - Now click on `My Profile`. Then click back on `Show Requesting Party Token` to check the `profile:view` permission 
+**7** - Now click on `My Profile`. Then click back on `Show Requesting Party Token` to check you received a new `profile:view` permission in RPT
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/profile-view.png?raw=true)
 
