@@ -156,19 +156,19 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **16** - Refresh the page in `photoz-html5-client` to confirm Alice still doesn't have access.
 
-**16** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
+**17** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
-**17** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` will deny the access of album for 2 minutes. As the example below, in minutes 42 and 43 the access wil be denied.
+**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` will deny the access of album for 2 minutes. As the example below, in minutes 42 and 43 the access wil be denied.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
 
-**18** - Then create a permission based on time policy you just created
+**19** - Then create a permission based on time policy you just created
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-permission.png?raw=true)
 
-**18** - Check with admin login that you cannot access album resource in specific time you have defined.
+**20** - Check with admin login that you cannot access album resource in specific time you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
