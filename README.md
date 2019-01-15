@@ -54,7 +54,7 @@ cd jboss-eap-7.1
 unzip rh-sso-7.2.5-eap7-adapter.zip
 ./bin/standalone.sh &
 
-./bin/jboss-cli.sh --connect --file=./jboss-eap-7.1/bin/adapter-install.cli
+./bin/jboss-cli.sh --connect --file=./bin/adapter-install.cli
 ```
 
 ## Preparing applications and dependencies
