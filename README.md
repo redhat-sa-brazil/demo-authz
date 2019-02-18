@@ -2,7 +2,7 @@
 
 ## Slide Deck
 
-https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1Czhw
+https://docs.google.com/presentation/d/1FxKu6pZAFMumdpagicyV0JQrscxA2dKqZelibO1Czhw/edit
 
 ## Setup
 
