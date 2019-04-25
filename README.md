@@ -174,7 +174,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **21** - Then create a new permission based on `jdoes album` and add the time policy you just created
 
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album-time-permission.png?raw=true)
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album-time-based.png?raw=true)
 
 **22** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
 
