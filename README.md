@@ -155,28 +155,22 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied3.png?raw=true)
 
-**16** - Now on RH-SSO edit the Permission `Album Resource Permission`. Add the Policy `Only From @keycloak.org or Admin` and change the Decision Strategy to `Unanimous`
-
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin-album.png?raw=true)
-
-**17** - Refresh the page in `photoz-html5-client` to confirm Alice still doesn't have access.
-
-**18** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm you can see all album resources.
+**16** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm admin can see all album resources.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
-**19** - Log-in again with user `jdoe` and access the jdoes album `photoz-html5-client/#/album/2` to confirm you can see the album resource.
+**17** - Log-in again with user `jdoe` and access the jdoes album `photoz-html5-client/#/album/2` to confirm you can see the album resource.
 
-**20** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of jdoes album for 2 minutes. 
+**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of jdoes album for 2 minutes. 
          As the example below in minutes 42 and 43 the access wil be denied.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
 
-**21** - Then create a new permission based on `jdoes album` and add the time policy you just created
+**19** - Then create a new permission based on `jdoes album` and add the time policy you just created
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album-time-based.png?raw=true)
 
-**22** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
+**20** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
