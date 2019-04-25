@@ -76,7 +76,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 ./rh-sso-7.2/standalone.sh -b 0.0.0.0 -bmanagement 0.0.0.0 -bunsecure 0.0.0.0 -Djboss.socket.binding.port-offset=1 -Dkeycloak.profile=preview
 ```
 
-**1** - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8081/auth/admin/.
+**1** - Open Red Hat Single Sign-On and enter the admin username and password (or create an admin user) on http://localhost:8180/auth/admin/.
 
 **2** - Click on Add-Realm and add a realm `photoz` importing the file `photoz-realm.json`
 
@@ -103,7 +103,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 * jdoe/jdoe
 * admin/admin
 
-**1** - Access Red Hat Single Sign-On in http://localhost:8081/auth/admin
+**1** - Access Red Hat Single Sign-On in http://localhost:8180/auth/admin
 
 **2** - Click on `Clients` in `photoz` realm. Open  **photoz-restful-api** client configuration click on **Authorization** tab and show the Settings in **Resources**, **Authorization Scopes**, **Policies** and **Permissions**. Explain each one if possible.
 
