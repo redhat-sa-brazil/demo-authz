@@ -153,7 +153,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **15** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and access the same URL `photoz-html5-client/#/album/2` to confirm admin can see jdoes album.
 
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin_jdoes_album.png?raw=true)
 
 **16** - Log-out and log-in again with user `jdoe` and access the same URL `photoz-html5-client/#/album/2` to see you still cannot see the resource.
 
