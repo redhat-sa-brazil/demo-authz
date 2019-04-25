@@ -181,7 +181,8 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
 ### Cleanup:
-* Delete photoz Realm in RH-SSO
+* Delete photoz Realm in RH-SSO and import it again
+* Import Realm definitions again in Authorization tab of `photoz-restful-api`
 * Delete the content of folders `tmp` and `data` in JBoss EAP 7.1 and restart JBoss
 
 
