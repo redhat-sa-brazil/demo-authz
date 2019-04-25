@@ -139,6 +139,10 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album.png?raw=true)
 
+**14** - Update the URL in browser with `photoz-html5-client/#/album/2` to guarantee you don't have access
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access_denied_jdoe.png?raw=true)
+
 **12** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/remove-album-permission.png?raw=true)
@@ -147,9 +151,6 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied1.png?raw=true)
 
-**14** - Update the URL in browser with `photoz-html5-client/#/album/2` to guarantee you don't have access
-
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied2.png?raw=true)
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied3.png?raw=true)
 
