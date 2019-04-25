@@ -159,6 +159,10 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
+**16** - Access the URL `photoz-html5-client/#/album/1` to guarantee only `admin` can see alices album.
+
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin-alices-album.png?raw=true)
+
 **17** - Log-in again with user `jdoe` and access the jdoes album `photoz-html5-client/#/album/2` to confirm you can see the album resource.
 
 **18** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of jdoes album for 2 minutes. 
