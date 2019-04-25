@@ -109,7 +109,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **3** - Access the `photoz-html5-client` application in http://localhost:8080/photoz-html5-client
 
-**4** - Login with user **Alice**
+**4** - Login with user **alice**
 
 **5** - Consent the use of your data from photoz-restful-api by photoz-html-client
 
