@@ -165,20 +165,16 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 **18** - Log-in with user `jdoe` and access the same URL `photoz-html5-client/#/album/2` to see you cannot see the album.
 
-**19** - Change the permission `Album Resource Permission` and add again the policy `Any User Policy`.
-
-**20** - Refresh the `photoz-html5-client/#/album/2` page with user `jdoe` and check now you can see the album resource.
-
-**21** - Now go to RH-SSO and create a Policy based on time. Create a `negative policy` that will deny the access of jdoes album for 2 minutes. 
-         As the example below in minutes 42 and 43 the access wil be denied.
+**19** - Now go to RH-SSO and create a Policy based on time. Create a `positive policy` that will give access of jdoes album for 2 minutes. 
+         As the example below in minutes 42 and 43 the access wil be granted.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
 
-**22** - Then create a new permission based on `jdoes album` and add the time policy you just created
+**20** - Then create a new permission based on `jdoes album` and add the time policy you just created
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album-time-based.png?raw=true)
 
-**23** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
+**21** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
