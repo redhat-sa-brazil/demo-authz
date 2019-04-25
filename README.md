@@ -168,7 +168,7 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 **19** - Now go to RH-SSO and create a Policy based on time. Create a `positive policy` that will give access of jdoes album for 2 minutes. 
          As the example below in minutes 42 and 43 the access wil be granted.
 
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based.png?raw=true)
+![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based1.png?raw=true)
 
 **20** - Then create a new permission based on `jdoes album` and add the time policy you just created
 
