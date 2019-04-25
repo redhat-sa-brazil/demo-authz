@@ -139,44 +139,38 @@ cp keycloak/testsuite/integration-arquillian/test-apps/photoz/photoz-restful-api
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album.png?raw=true)
 
-**12** - Now click on `Sign Out` again and log-in with user `alice` to see the albuns
-
-**13** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
+**12** - Log-in with admin in Red Hat Single Sign-On and go to `Clients -> photoz-restful-api -> Authorization -> Permissions` and edit the permission `Album Resource Permission`. Remove the Policy `Any User Policy`
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/remove-album-permission.png?raw=true)
 
-**14** - Refresh the page in `photoz-html5-client` to check you don't have access anymore
+**13** - Refresh the page in `photoz-html5-client` to check you don't have access anymore
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied1.png?raw=true)
 
-**15** - Update the URL in browser to guarantee you don't have access
+**14** - Update the URL in browser with `photoz-html5-client/#/album/2` to guarantee you don't have access
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied2.png?raw=true)
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied3.png?raw=true)
 
-**16** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and click on `All Albuns` and confirm admin can see all album resources.
+**15** - Now log-out and log-in again in `photoz-html5-client` with user `admin` and access the same URL `photoz-html5-client/#/album/2` to confirm admin can see jdoes album.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/all-albums.png?raw=true)
 
-**17** - Access the URL `photoz-html5-client/#/album/1` to guarantee only `admin` can see alices album.
+**16** - Log-out and log-in again with user `jdoe` and access the same URL `photoz-html5-client/#/album/2` to see you still cannot see the resource.
 
-![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/admin-alices-album.png?raw=true)
+**17** - Change the `Album Resource Policy` again and add again  `Any User` policy and Refresh the jdoes album page.
 
-**18** - Log-in with user `jdoe` and access the same URL `photoz-html5-client/#/album/2` to see you cannot see the album.
-
-**19** - Change the `Album Resource Policy` again and add  `Any User` policy and Refresh the jdoes album page.
-
-**20** - Now go to RH-SSO and create a Policy based on time. Create a `negative time policy` that will deny access of jdoes album for 2 minutes. 
-         As the example below in minutes 42 and 43 the access wil be denied.
+**18** - Now go to RH-SSO and create a Policy based on time. Create a `negative time policy` that will deny access of jdoes album for 2 minutes. 
+         As the example below from the minute 42 to 43 the access wil be denied.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/time-based1.png?raw=true)
 
-**21** - Then create a new permission based on `jdoes album` and add the time policy you just created
+**19** - Then create a new permission based on `jdoes album` and add the time policy you just created
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/jdoes-album-time-based.png?raw=true)
 
-**22** - Refresh the page to confirm that you cannot access album resource in the specific minutes you have defined.
+**20** - Refresh the page to confirm that you cannot access album resource in the specified minutes you have defined.
 
 ![](https://github.com/redhat-sa-brazil/demo-authz/blob/master/pictures/access-denied-admin.png?raw=true)
 
